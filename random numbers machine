@@ -1,0 +1,89 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL,"");
+    srand (time (NULL));
+    int liczby [999];
+    int x;
+    int nr = 0;
+    int zgoda;
+
+    cout<<"program przywoła 999 przypadkowych liczb od 4 do 10, a następnie obliczy ich sumę."<<endl<<"gotowy?"<<endl;
+    cout<<"[1] tak!"<<endl;
+    cin>> zgoda;
+
+    if (zgoda==1)
+    {
+
+
+
+    do
+    {
+        x = (rand()%7)+4;
+        liczby [nr] = x;
+        nr++;
+    } while (nr<999);
+
+    nr=0;
+
+    do
+    {
+        cout<< liczby [nr];
+        nr++;
+    } while (nr<999);
+    cout<<endl;
+
+
+    int wynik = 0;
+    nr =0;
+    do
+    {
+        wynik += liczby[nr];
+        nr++;
+    } while (nr<999);
+
+
+    cout<< "Chcesz zobaczyć tę niebotyczną sumę?"<<endl<<"[1] - tak" <<endl<< "[2] - nie"<<endl;
+    int pytanie;
+    cin >> pytanie;
+    switch (pytanie)
+    {
+
+
+case 1:
+
+cout<< "Uwaga uwaga:"<<endl;
+
+         cout << "============================================="<<endl;
+        cout << "=======SUMA TYCH WSZYSTKICH CYFR RÓWNA SIĘ: ==========="<<endl;
+        cout << "================"<< wynik << "==============="<<endl;
+        cout << "============================================="<<endl;
+         break;
+
+    case 2:
+
+    cout << "wiem, że chcesz"<<endl;
+
+         cout << "============================================="<<endl;
+        cout << "=======SUMA TYCH WSZYSTKICH CYFR RÓWNA SIĘ: ==========="<<endl;
+        cout << "================"<< wynik << "==============="<<endl;
+        cout << "============================================="<<endl;
+         break;
+    default:
+        cout << "zobaczysz tak czy tak"<<endl;
+             cout << "============================================="<<endl;
+        cout << "=======SUMA TYCH WSZYSTKICH CYFR RÓWNA SIĘ: ==========="<<endl;
+        cout << "================"<< wynik << "==============="<<endl;
+        cout << "============================================="<<endl;
+        break;
+        }
+    }
+
+
+        return 0;
+}
