@@ -1,0 +1,75 @@
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <limits>
+using namespace std;
+int main()
+{
+    srand (time(NULL));
+    setlocale(LC_ALL,"");
+    int y;
+    int ilosc=0;
+    int czyNastepna;
+    cout<< "=========================="<<endl;
+    cout<< "     ZAGRAJMY W GRĘ"<<endl;
+    cout<< "=========================="<<endl;
+    cout<< "zasady są proste - kto dłużej utrzyma się na nogach - wygrywa. Kolejkę?"<<endl;
+
+    do
+    {
+
+
+    int x = (rand() %1000)+1;
+
+    cout<< "==========WPISZ==========="<<endl;
+    cout<< "         LICZBĘ"<<endl;
+    cout<< "===OD JEDNEGO DO TYSIĄCA==="<<endl;
+
+    do
+    {
+
+    cin>> y;
+    ilosc++;
+bool czy_blad = cin.fail();
+    cin.clear();
+    cin.ignore(1000, '\n');
+    if (czy_blad)
+    {
+         cout<< "proszę, wpisz cyfrę"<<endl;}
+
+    if (y>x)
+        cout<< "*******TWOJA LICZBA JEST ZA DUŻA********"<<endl;
+
+    if (y<x)
+        cout<< "-----------liczba jest za mała------------"<<endl;
+
+    if (y==x)
+        cout<< "GRATULACJE, WYGRANA!"<<endl;
+    if (y>1000)
+        cout<< "spróbuj jeszcze raz"<<endl;
+
+    } while (x!=y);
+
+    cout<<"=========================="<<endl;
+    cout<<"     LICZBA TO  "<< x <<endl;
+    cout<<"=========================="<<endl;
+    cout<<"udało ci się za "<< ilosc << " razem."<<endl;
+
+    if (ilosc==1)
+    cout<<"wszyscy poza tobą piją po 100 ml"<<endl;
+    if (ilosc!=0, ilosc<=5)
+    cout<<"wszyscy poza tobą piją kolejkę"<<endl;
+    if (ilosc>5, ilosc<=7)
+    cout<<"wybierasz osobę która pije kolejkę"<<endl;
+    if (ilosc>7, ilosc<=11)
+    cout <<"wybierasz osobę która pije kolejkę razem z tobą"<<endl;
+    if (ilosc>11)
+    cout<<"pijesz kolejkę"<<endl;
+
+
+    cout<< "Następną kolejkę?"<<endl<<"[1] tak!"<<endl<<"[2] już podziękuję"<<endl;
+    cin>> czyNastepna;
+
+    } while (czyNastepna!=2);
+return 0;
+}
