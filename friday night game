@@ -11,9 +11,9 @@ int main()
     int ilosc=0;
     int czyNastepna;
     cout<< "=========================="<<endl;
-    cout<< "     ZAGRAJMY W GRĘ"<<endl;
+    cout<< "     LET'S PLAY A GAME"<<endl;
     cout<< "=========================="<<endl;
-    cout<< "zasady są proste - kto dłużej utrzyma się na nogach - wygrywa. Kolejkę?"<<endl;
+    cout<< "the rules are simple - the last man to remain standing is the winner. Ready?"<<endl;
 
     do
     {
@@ -21,9 +21,9 @@ int main()
 
     int x = (rand() %1000)+1;
 
-    cout<< "==========WPISZ==========="<<endl;
-    cout<< "         LICZBĘ"<<endl;
-    cout<< "===OD JEDNEGO DO TYSIĄCA==="<<endl;
+    cout<< "==========ENTER==========="<<endl;
+    cout<< "        A NUMBER"<<endl;
+    cout<< "===FROM ONE TO ONE THOUSAND==="<<endl;
 
     do
     {
@@ -35,41 +35,43 @@ bool czy_blad = cin.fail();
     cin.ignore(1000, '\n');
     if (czy_blad)
     {
-         cout<< "proszę, wpisz cyfrę"<<endl;}
+         cout<< "you're wrong, sir"<<endl;}
 
     if (y>x)
-        cout<< "*******TWOJA LICZBA JEST ZA DUŻA********"<<endl;
+        cout<< "*******YOUR NUMBER IS TOO LARGE********"<<endl;
 
     if (y<x)
-        cout<< "-----------liczba jest za mała------------"<<endl;
+        cout<< "----------- now your number is too small------------"<<endl;
 
     if (y==x)
-        cout<< "GRATULACJE, WYGRANA!"<<endl;
+        cout<< "CONGRATULATIONS!"<<endl;
     if (y>1000)
-        cout<< "spróbuj jeszcze raz"<<endl;
+        cout<< "try again sweety"<<endl;
 
     } while (x!=y);
 
     cout<<"=========================="<<endl;
-    cout<<"     LICZBA TO  "<< x <<endl;
+    cout<<"     THE NUMBER IS  "<< x <<endl;
     cout<<"=========================="<<endl;
-    cout<<"udało ci się za "<< ilosc << " razem."<<endl;
+    cout<<"you just do it on your "<< ilosc << " try."<<endl;
 
     if (ilosc==1)
-    cout<<"wszyscy poza tobą piją po 100 ml"<<endl;
+    cout<<"Everyone without you drinks 100ml"<<endl;
     if (ilosc!=0, ilosc<=5)
-    cout<<"wszyscy poza tobą piją kolejkę"<<endl;
+    cout<<"Everyone without you drinks a shot"<<endl;
     if (ilosc>5, ilosc<=7)
-    cout<<"wybierasz osobę która pije kolejkę"<<endl;
-    if (ilosc>7, ilosc<=11)
-    cout <<"wybierasz osobę która pije kolejkę razem z tobą"<<endl;
+    cout<<"You can choose someone to drink a shot"<<endl;
+    if (ilosc>=8, ilosc<=11)
+    cout <<"You can choose someone to drink a shot with you"<<endl;
     if (ilosc>11)
-    cout<<"pijesz kolejkę"<<endl;
+    cout<<"You must drink a shot"<<endl;
 
 
-    cout<< "Następną kolejkę?"<<endl<<"[1] tak!"<<endl<<"[2] już podziękuję"<<endl;
+    cout<< "Next person?"<<endl<<"[1] of course! "<<endl<<"[2] no, thanks"<<endl;
     cin>> czyNastepna;
 
     } while (czyNastepna!=2);
+
+    cout<<"bye guys, be carefull!"<<endl;
 return 0;
 }
